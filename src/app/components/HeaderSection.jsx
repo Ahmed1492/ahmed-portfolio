@@ -22,7 +22,7 @@ const HeaderSection = () => {
     <div className={`w-full h-screen  `}>
       <div className="h-full  w-full flex flex-col gap-5 items-center justify-center">
         <div className="flex flex-col gap-1 items-center ">
-          <Image src={assets.profile_img} alt="" className="w-20" />
+          <Image src={assets.profile_img} alt="" className="w-30 rounded-full object-cover" />
           <h3 className="text-2xl text-gray-700">Hi! I'm Ahmed Mohamed 👋🏻</h3>
         </div>
         {/* <button onClick={changeMode} className="bg-red-700 cursor-pointer">

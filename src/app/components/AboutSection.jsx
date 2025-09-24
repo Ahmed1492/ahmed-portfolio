@@ -4,10 +4,7 @@ import React from "react";
 
 const AboutSection = () => {
   return (
-    <div
-      id="about"
-      className="w-full  px-[12%] py-10 scroll-mt-20"
-    >
+    <div id="about" className="w-full  px-[12%] py-10 scroll-mt-20">
       <h4 className="text-lg text-center mb-2 font-ovo">Introduction</h4>
       <h2 className="text-5xl text-center mb-2 font-ovo ">About Me</h2>
 
@@ -16,7 +13,7 @@ const AboutSection = () => {
           <Image
             src={assets.user_image}
             alt="user"
-            className="w-full rounded-3xl"
+            className="w-full rounded-md object-cover"
           />
         </div>
 
