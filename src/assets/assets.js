@@ -171,7 +171,7 @@ export const projectsData = [
         title: "Task Manager App",
         slug: "task-manager-app",
         img: ["/workn.png", '/work-1.png'], techUsed: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS"],
-        category: "fullstack",
+        category: "node",
         description: "A full-stack task management application to help users organize and track tasks efficiently with secure authentication and CRUD functionality.",
         features: [
             "Secure user authentication using JWT with token storage in localStorage",
@@ -194,7 +194,7 @@ export const projectsData = [
         title: "ECommerce App",
         slug: "ecommerce-app",
         img: ["/workn.png", '/work-1.png'], techUsed: ["React.js", "Sass (SCSS)", "React Router", "Redux Toolkit"],
-        category: "frontend",
+        category: "nextjs",
         description: "A simple eCommerce application with product listings, category filtering, single product pages, and responsive design.",
         features: [
             "Product listing with all available items",
@@ -214,7 +214,7 @@ export const projectsData = [
         title: "Product Listing and Search Application",
         slug: "product-listing-app",
         img: ["/workn.png", '/work-1.png'], techUsed: ["React.js", "Tailwind CSS", "localStorage"],
-        category: "frontend",
+        category: "react",
         description: "A product management application with search, filtering, sorting, pagination, and add product functionality, styled with Tailwind CSS.",
         features: [
             "Product listing with name, price, category, and description",
