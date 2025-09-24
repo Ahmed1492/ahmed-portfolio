@@ -23,7 +23,7 @@ const ServicesSection = () => {
             className="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1  duration-500"
             key={index}
           >
-            <Image src={icon} alt={title} className="w-10" />
+            <Image src={icon} alt={title} className="w-10  rounded-full " />
             <h3 className="text-lg my-4 text-gray-700">{title}</h3>
             <p className="text-sm text-gray-600 leading-5">{description}</p>
             <a className="flex items-center gap-2 text-sm mt-5" href={link}>
