@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";  // ✅ import Link
+import Link from "next/link"; // ✅ import Link
 import React, { useEffect, useState } from "react";
 import { assets } from "../../assets/assets";
 import MobileMenue from "../components/MenueMobile";
@@ -45,19 +45,29 @@ const Navbar = () => {
           }`}
         >
           <li>
-            <Link className="font-ovo" href="/#top">Home</Link>
+            <Link className="font-ovo" href="/#top">
+              Home
+            </Link>
           </li>
           <li>
-            <Link className="font-ovo" href="/#about">About me</Link>
+            <Link className="font-ovo" href="/#about">
+              About me
+            </Link>
           </li>
           <li>
-            <Link className="font-ovo" href="/#services">Services</Link>
+            <Link className="font-ovo" href="/#services">
+              Services
+            </Link>
           </li>
           <li>
-            <Link className="font-ovo" href="/#work">My Work</Link>
+            <Link className="font-ovo" href="/#work">
+              My Work
+            </Link>
           </li>
           <li>
-            <Link className="font-ovo" href="/#contact">Contact Me</Link>
+            <Link className="font-ovo" href="/#contact">
+              Contact Me
+            </Link>
           </li>
         </ul>
 
@@ -78,7 +88,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <MobileMenue />
+        <MobileMenue isScroll={isScroll} />
       </nav>
     </>
   );

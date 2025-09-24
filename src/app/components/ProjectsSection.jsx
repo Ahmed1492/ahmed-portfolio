@@ -29,7 +29,7 @@ const ProjectsSection = () => {
       </p>
       <div>
         {/* Filters */}
-        <div className="flex justify-center gap-2">
+        <div className=" flex-wrap sm:flex-nowrap flex justify-center gap-2">
           {categories.map(({ category, label }) => (
             <button
               key={category}

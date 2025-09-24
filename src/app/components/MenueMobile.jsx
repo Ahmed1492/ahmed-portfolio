@@ -1,62 +1,48 @@
 "use client";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
-const MenueMobile = () => {
+const MenueMobile = ({ isScroll }) => {
   const [isOpenMenue, setIsOpenMenue] = useState(false);
 
   return (
     <>
       <button
-        // onClick={(prev) => setIsOpenMenue(!prev)}
         onClick={() => setIsOpenMenue((prev) => !prev)}
-        className="block z-50 md:hidden ml-8"
+        className="block z-50 md:hidden ml-4"
       >
-        <Image src={assets.menu_black} alt="" className="w-6 cursor-pointer" />
+        <Image src={assets.menu_black} alt="menu" className="w-6 cursor-pointer" />
       </button>
 
-      {/* Mobile Menue */}
-
       <ul
-        className={`flex md:hidden transition-all translate-2  w-[60%] sm:w-[40%]  flex-col items-start gap-4 py-20 px-10 fixed ${
-          isOpenMenue ? "right-0" : "-right-[100%]"
-        }   top-0 bottom-0 w-64 z-40 h-screen bg-rose-50 transition duration-500`}
+        className={`fixed top-0 bottom-0 z-40 h-screen flex flex-col items-start gap-6 px-10 py-20 transition-all duration-500 ${
+          isOpenMenue ? "right-0" : "-right-full"
+        } w-[60%] sm:w-[40%] bg-white bg-opacity-50 backdrop-blur-lg shadow-md rounded-l-xl`}
       >
         {isOpenMenue && (
           <button
             onClick={() => setIsOpenMenue(false)}
-            className="absolute  z-50 cursor-pointer top-[1rem] left-[2rem] "
+            className="absolute top-4 left-4 z-50"
           >
-            <Image src={assets.close_black} alt="" className="w-4" />
+            <Image src={assets.close_black} alt="close" className="w-4" />
           </button>
         )}
 
-        <li onClick={() => setIsOpenMenue(false)} className="">
-          <a className="font-ovo" href="#top">
-            Home
-          </a>
-        </li>
-        <li onClick={() => setIsOpenMenue(false)}>
-          <a className="font-ovo" href="#about">
-            About me
-          </a>
-        </li>
-        <li onClick={() => setIsOpenMenue(false)}>
-          <a className="font-ovo" href="#services">
-            Services
-          </a>
-        </li>
-        <li onClick={() => setIsOpenMenue(false)}>
-          <a className="font-ovo" href="#work">
-            My Work
-          </a>
-        </li>
-        <li onClick={() => setIsOpenMenue(false)}>
-          <a className="font-ovo" href="#contact">
-            Contact Me
-          </a>
-        </li>
+        {[
+          { label: "Home", href: "/#top" },
+          { label: "About me", href: "/#about" },
+          { label: "Services", href: "/#services" },
+          { label: "My Work", href: "/#work" },
+          { label: "Contact Me", href: "/#contact" },
+        ].map(({ label, href }) => (
+          <li key={label} onClick={() => setIsOpenMenue(false)}>
+            <Link className="font-ovo text-lg" href={href}>
+              {label}
+            </Link>
+          </li>
+        ))}
       </ul>
     </>
   );

@@ -111,7 +111,7 @@ export const projectsData = [
         id: 1,
         title: "Social Media App",
         slug: "social-media-app",
-        img: ["/projects/socialMedia.png"],
+        img: ["/workn.png", '/work-1.png'],
         techUsed: ["Next.js", "Prisma", "MySQL", "Clerk.js", "Tailwind CSS", "Zod", "Svix"],
         category: "fullstack",
         description: "A full-stack social media platform with dynamic user interactions, scalable architecture, and modern UX.",
@@ -170,8 +170,7 @@ export const projectsData = [
         id: 3,
         title: "Task Manager App",
         slug: "task-manager-app",
-        img: ["/work-4.png"], // replace with your mockup/screenshot image
-        techUsed: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS"],
+        img: ["/workn.png", '/work-1.png'], techUsed: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS"],
         category: "fullstack",
         description: "A full-stack task management application to help users organize and track tasks efficiently with secure authentication and CRUD functionality.",
         features: [
@@ -194,8 +193,7 @@ export const projectsData = [
         id: 6,
         title: "ECommerce App",
         slug: "ecommerce-app",
-        img: ["/work-4.png"], // replace with your mockup/screenshot image
-        techUsed: ["React.js", "Sass (SCSS)", "React Router", "Redux Toolkit"],
+        img: ["/workn.png", '/work-1.png'], techUsed: ["React.js", "Sass (SCSS)", "React Router", "Redux Toolkit"],
         category: "frontend",
         description: "A simple eCommerce application with product listings, category filtering, single product pages, and responsive design.",
         features: [
@@ -215,8 +213,7 @@ export const projectsData = [
         id: 7,
         title: "Product Listing and Search Application",
         slug: "product-listing-app",
-        img: ["/work-4.png"], // replace with your mockup/screenshot image
-        techUsed: ["React.js", "Tailwind CSS", "localStorage"],
+        img: ["/workn.png", '/work-1.png'], techUsed: ["React.js", "Tailwind CSS", "localStorage"],
         category: "frontend",
         description: "A product management application with search, filtering, sorting, pagination, and add product functionality, styled with Tailwind CSS.",
         features: [
@@ -238,8 +235,7 @@ export const projectsData = [
         id: 8,
         title: "Travel Destination Website",
         slug: "travel-destination-website",
-        img: ["/work-4.png"], // replace with your mockup/screenshot image
-        techUsed: ["HTML", "CSS", "Tailwind CSS"],
+        img: ["/workn.png", '/work-1.png'], techUsed: ["HTML", "CSS", "Tailwind CSS"],
         category: "ui",
         description: "A responsive travel destination landing page showcasing destinations, services, and customer testimonials with a modern UI design.",
         features: [
@@ -257,8 +253,7 @@ export const projectsData = [
         id: 20,
         title: "Easy-Edit",
         slug: "easy-edit",
-        img: ["/work-4.png"],
-        techUsed: ["HTML", "CSS", "Bootstrap"],
+        img: ["/workn.png", '/work-1.png'], techUsed: ["HTML", "CSS", "Bootstrap"],
         category: "ui",
         description: "A professional and responsive website template tailored for finance, cryptocurrency, and digital currency platforms, adaptable across industries.",
         features: [
