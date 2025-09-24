@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+* {
+  font-family: Outfit;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit&family=Ovo&display=swap");
+
+/* Font Utilities */
+.font-outfit {
+  font-family: "Outfit", sans-serif;
+}
+
+.lightBg {
+  background: #f5f5f5;
+  background: radial-gradient(
+    circle,
+    rgba(245, 245, 245, 1) 0%,
+    rgba(237, 223, 223, 1) 100%
+  );
+  min-height: 100vh;
+  /* color: #fff !important; */
+}
+.font-ovo {
+  font-family: "Ovo", serif;
+}
+
+/* Color Utilities */
+.bg-lighthover {
+  background-color: #fcf4ff;
+}
+
+.bg-darkhover {
+  background-color: #2a004a;
+}
+
+.bg-darktheme {
+  background-color: #11001f;
+}
+
+.text-lighthover {
+  color: #fcf4ff;
+}
+
+.text-darkhover {
+  color: #2a004a;
+}
+
+.text-darktheme {
+  color: #11001f;
+}
+
+.blackShadow {
+  box-shadow: 4px 4px 0 rgb(80, 80, 80);
+}
+.whiteShadow {
+  box-shadow: 4px 4px 0 #fff;
+}
