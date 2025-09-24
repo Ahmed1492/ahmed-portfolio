@@ -30,7 +30,7 @@ const ServicesSection = () => {
               Read more
               <Image src={assets.right_arrow} alt="" className="w-4" />
             </a>
-          </div>
+          </div>  
         ))}
       </div>
     </div>
