@@ -9,7 +9,17 @@ import FooterSection from "./components/FooterSection.jsx";
 import { useEffect, useState } from "react";
 import { useAppContext } from "./context/AppContext.jsx";
 export default function Home() {
-const { mode, setMode } = useAppContext();
+  const { mode, setMode } = useAppContext();
+
+  useEffect(() => {
+    const savedMode = localStorage.getItem("mode") || "light";
+    setMode(savedMode);
+  }, []);
+
+  if (mode === null) {
+    // Mode not loaded yet → show nothing or a loader
+    return null; // or a loading spinner if you want
+  }
 
   return (
     <div className={`${mode === "dark" ? "bg-gray-900 text-white" : ""}`}>

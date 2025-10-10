@@ -4,7 +4,12 @@ import { createContext, useState, useContext, useEffect } from "react";
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState(null); 
+
+  useEffect(() => {
+    const savedMode = localStorage.getItem("theme");
+    setMode(savedMode || "light");
+  }, []);
 
   useEffect(() => {
     const savedMode = localStorage.getItem("theme");
@@ -12,6 +17,9 @@ export const AppProvider = ({ children }) => {
       setMode(savedMode);
     }
   }, [mode]);
+
+  if (mode === null) return null; 
+
   return (
     <AppContext.Provider value={{ mode, setMode }}>
       {children}
@@ -19,5 +27,4 @@ export const AppProvider = ({ children }) => {
   );
 };
 
-// custom hook (optional but cleaner)
 export const useAppContext = () => useContext(AppContext);

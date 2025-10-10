@@ -44,39 +44,56 @@ const ContactSection = ({ mode }) => {
         feedback, please use the form below.
       </p>
 
-      <form onSubmit={onSubmit} className="max-w-2xl mx-auto ">
+      <form onSubmit={onSubmit} className="max-w-2xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 mb-8">
           <input
-            className="flex-1 px-3 py-2 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            className={`flex-1 px-3 py-2 outline-none border rounded-md transition-all duration-300
+        ${
+          mode === "dark"
+            ? "bg-gray-800 border-gray-600 text-white placeholder-gray-400"
+            : "bg-white border-gray-400 text-gray-900 placeholder-gray-600"
+        }`}
             type="text"
-            placeholder="Enter Your name"
+            placeholder="Enter your name"
             required
             name="name"
           />
+
           <input
-            className="flex-1 px-3 py-2 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            className={`flex-1 px-3 py-2 outline-none border rounded-md transition-all duration-300
+        ${
+          mode === "dark"
+            ? "bg-gray-800 border-gray-600 text-white placeholder-gray-400"
+            : "bg-white border-gray-400 text-gray-900 placeholder-gray-600"
+        }`}
             type="email"
-            placeholder="Enter Your email"
+            placeholder="Enter your email"
             required
             name="email"
           />
         </div>
+
         <textarea
-          className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6"
+          className={`w-full p-4 outline-none border rounded-md mb-6 transition-all duration-300
+      ${
+        mode === "dark"
+          ? "bg-gray-800 border-gray-600 text-white placeholder-gray-400"
+          : "bg-white border-gray-400 text-gray-900 placeholder-gray-600"
+      }`}
           rows="6"
-          placeholder="Enter Your message"
+          placeholder="Enter your message"
           required
           name="message"
         ></textarea>
+
         <button
           type="submit"
           className={`cursor-pointer py-3 px-8 w-max flex items-center justify-between gap-2 rounded-full mx-auto transition-all duration-500
-    ${
-      mode === "dark"
-        ? "bg-gray-800 text-white hover:bg-gray-700"
-        : "bg-[#4a4848] text-white hover:bg-black"
-    }
-  `}
+      ${
+        mode === "dark"
+          ? "bg-gray-800 text-white hover:bg-gray-700"
+          : "bg-[#4a4848] text-white hover:bg-black"
+      }`}
         >
           Submit now
           <Image
