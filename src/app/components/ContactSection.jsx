@@ -3,7 +3,7 @@ import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React, { useState } from "react";
 
-const ContactSection = () => {
+const ContactSection = ({ mode }) => {
   const [result, setResult] = useState("");
 
   const onSubmit = async (event) => {
@@ -31,7 +31,9 @@ const ContactSection = () => {
 
   return (
     <div
-      className="w-full  px-[12%] py-10 scroll-mt-20 bg-[url('/footer-bg-color.png')] bg-no-repeat bg-center bg-[length:90%_auto] "
+      className={`w-full mt-[2rem] px-[12%] py-10 scroll-mt-20 ${
+        mode === "dark" ? "" : "bg-[url('/footer-bg-color.png')]"
+      } bg-no-repeat bg-center bg-[length:90%_auto] `}
       id="contact"
     >
       <h4 className="text-lg text-center mb-2 font-ovo">Connect with me</h4>
@@ -42,7 +44,7 @@ const ContactSection = () => {
         feedback, please use the form below.
       </p>
 
-      <form onSubmit={onSubmit} className="max-w-2xl mx-auto">
+      <form onSubmit={onSubmit} className="max-w-2xl mx-auto ">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 mb-8">
           <input
             className="flex-1 px-3 py-2 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
@@ -67,12 +69,23 @@ const ContactSection = () => {
           name="message"
         ></textarea>
         <button
-          className="cursor-pointer py-3 px-8 w-max flex items-center justify-between gap-2 bg-[#4a4848] text-white rounded-full mx-auto hover:bg-black duration-500"
           type="submit"
+          className={`cursor-pointer py-3 px-8 w-max flex items-center justify-between gap-2 rounded-full mx-auto transition-all duration-500
+    ${
+      mode === "dark"
+        ? "bg-gray-800 text-white hover:bg-gray-700"
+        : "bg-[#4a4848] text-white hover:bg-black"
+    }
+  `}
         >
           Submit now
-          <Image src={assets.right_arrow_white} alt="" className="w-4" />
+          <Image
+            src={assets.right_arrow_white}
+            alt="arrow icon"
+            className="w-4"
+          />
         </button>
+
         <p className="mt-4">{result}</p>
       </form>
     </div>

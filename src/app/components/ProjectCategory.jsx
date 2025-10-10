@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-const ProjectCategory = ({ filter, currentPage, setCurrentPage }) => {
+const ProjectCategory = ({ filter, currentPage, setCurrentPage, mode }) => {
   // Filter projects
   const filteredProjects =
     filter === "all"
@@ -24,15 +24,17 @@ const ProjectCategory = ({ filter, currentPage, setCurrentPage }) => {
   const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
 
   return (
-    <div className="w-full">
+    <div className="w-full ">
       {/* Projects grid */}
-      <div className="mt-[4rem] flex flex-wrap justify-between gap-x-[1rem]  lg:gap-x-0 gap-y-[2rem]">
+      <div className="mt-[4rem]  flex flex-wrap justify-between gap-x-[1rem]  lg:gap-x-0 gap-y-[2rem]">
         {currentProjects.map((project, index) => {
           return (
             <Link
               href={`/${project.category}/${project.slug}`}
               key={index}
-              className="flex flex-col m-auto w-[23rem] md:w-[48%] lg:w-[45%] xl:w-[30%]  gap-3"
+              className={`flex flex-col ${
+                mode == "dark" ? "bg-whitea" : "bg-white"
+              }  m-auto w-[23rem] md:w-[48%] lg:w-[45%] xl:w-[30%]  gap-0`}
             >
               {/* Project image */}
               <div className="relative w-full aspect-video rounded-t-lg overflow-hidden bg-gray-200">
@@ -45,8 +47,16 @@ const ProjectCategory = ({ filter, currentPage, setCurrentPage }) => {
               </div>
 
               {/* Project details */}
-              <div className="flex flex-col w-full rounded-lg px-4 py-7 shadow-2xl justify-center items-center gap-3">
-                <h3 className="text-lg text-[#1B2A57] font-bold">
+              <div
+                className={`flex flex-col w-full rounded-b-lg px-4 py-7 ${
+                  mode == "dark" ? "bg-gray-700" : "bg-white"
+                } shadow-2xl justify-center items-center gap-3`}
+              >
+                <h3
+                  className={`text-lg ${
+                    mode === "dark" ? "text-white" : "text-[#1B2A57]"
+                  } font-bold`}
+                >
                   {project.title}
                 </h3>
                 <div className="flex flex-wrap gap-2 justify-center">
@@ -67,32 +77,51 @@ const ProjectCategory = ({ filter, currentPage, setCurrentPage }) => {
 
       {/* Pagination controls */}
       <div className="flex justify-center mt-10 gap-3">
+        {/* Prev button */}
         <button
-          className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
           onClick={() => setCurrentPage((p) => p - 1)}
           disabled={currentPage === 1}
+          className={`px-3 py-1 rounded transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed
+      ${
+        mode === "dark"
+          ? "bg-gray-800 text-gray-300 hover:bg-gray-700"
+          : "bg-gray-200 hover:bg-gray-300"
+      }
+    `}
         >
           Prev
         </button>
 
+        {/* Page numbers */}
         {[...Array(totalPages)].map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrentPage(i + 1)}
-            className={`px-4 py-1 rounded ${
-              currentPage === i + 1
-                ? "bg-[#1e5585] text-white font-bold"
-                : "bg-gray-200 cursor-pointer"
-            }`}
+            className={`px-4 py-1 rounded font-medium transition-all duration-300
+        ${
+          currentPage === i + 1
+            ? "bg-[#1e5585] text-white font-bold"
+            : mode === "dark"
+            ? "bg-gray-800 text-gray-300 hover:bg-gray-700"
+            : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+        }
+      `}
           >
             {i + 1}
           </button>
         ))}
 
+        {/* Next button */}
         <button
-          className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
           onClick={() => setCurrentPage((p) => p + 1)}
           disabled={currentPage === totalPages}
+          className={`px-3 py-1 rounded transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed
+      ${
+        mode === "dark"
+          ? "bg-gray-800 text-gray-300 hover:bg-gray-700"
+          : "bg-gray-200 hover:bg-gray-300"
+      }
+    `}
         >
           Next
         </button>

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import ProjectCategory from "./ProjectCategory";
-const ProjectsSection = () => {
+const ProjectsSection = ({ mode }) => {
   const [filter, setFilter] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -29,17 +29,20 @@ const ProjectsSection = () => {
       </p>
       <div>
         {/* Filters */}
-        <div className=" flex-wrap sm:flex-nowrap flex justify-center gap-2">
+        <div className="flex flex-wrap sm:flex-nowrap justify-center gap-2">
           {categories.map(({ category, label }) => (
             <button
               key={category}
               onClick={() => handleFilter(category)}
-              className={`px-3  text-sm md:text-base whitespace-nowrap py-2 rounded-md shadow-sm cursor-pointer transition 
-              ${
-                filter === category
-                  ? "bg-[#1e5585] text-white font-bold"
-                  : "hover:bg-gray-100"
-              }`}
+              className={`px-3 py-2 text-sm md:text-base rounded-md shadow-sm cursor-pointer transition-all duration-300
+        ${
+          filter === category
+            ? "bg-[#1e5585] text-white font-bold"
+            : mode === "dark"
+            ? "bg-gray-800 text-gray-300 hover:bg-gray-700"
+            : "bg-white text-gray-700 hover:bg-gray-100"
+        }
+      `}
             >
               {label}
             </button>
@@ -50,6 +53,7 @@ const ProjectsSection = () => {
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           filter={filter}
+          mode={mode}
         />
       </div>
     </div>

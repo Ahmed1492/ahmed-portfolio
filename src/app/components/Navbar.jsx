@@ -4,9 +4,19 @@ import Link from "next/link"; // ✅ import Link
 import React, { useEffect, useState } from "react";
 import { assets } from "../../assets/assets";
 import MobileMenue from "../components/MenueMobile";
+import clsx from "clsx";
 
-const Navbar = () => {
+const Navbar = ({ mode, setMode }) => {
   const [isScroll, setIsScroll] = useState(false);
+
+  const lightMode = () => {
+    setMode("light");
+    localStorage.setItem("theme", "light");
+  };
+  const darkMode = () => {
+    setMode("dark");
+    localStorage.setItem("theme", "dark");
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,28 +31,43 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll); // ✅ cleanup
   }, []);
 
+
+
   return (
     <>
       <div className="fixed left-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
         <Image src={assets.header_bg_color} alt="" className="w-full" />
       </div>
       <nav
-        className={`w-full fixed z-50 flex items-center justify-between  px-5 lg:px-8 xl:px-[10%] ${
-          isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm" : ""
-        }`}
+        className={clsx(
+          "w-full fixed z-50 flex items-center justify-between px-5 lg:px-8 xl:px-[10%] transition-all duration-500",
+          {
+            // Default background (when not scrolled)
+            // When scrolled
+            "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm":
+              isScroll && mode !== "dark",
+            "bg-gray-900 bg-opacity-50 backdrop-blur-lg shadow-sm":
+              isScroll && mode === "dark",
+          }
+        )}
       >
         <Link href="/#top">
           <Image
-            src={assets.logo}
+            src={mode !== "dark" ? assets.logo : assets.logo_dark}
             alt="#logo"
             className="w-28 cursor-pointer"
           />
         </Link>
 
         <ul
-          className={` hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${
-            isScroll ? "" : "bg-white shadow-sm bg-opacity-50"
-          }`}
+          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 transition-all duration-500
+      ${
+        isScroll
+          ? ""
+          : mode === "dark"
+          ? "bg-gray-800 shadow-sm bg-opacity-50"
+          : "bg-white shadow-sm bg-opacity-50"
+      }     `}
         >
           <li>
             <Link className="font-ovo" href="/#top">
@@ -72,19 +97,29 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center justify-end w-full md:w-max gap-4">
-          <button>
-            <Image
-              src={assets.moon_icon}
-              alt=""
-              className="w-6 cursor-pointer"
-            />
-          </button>
+          {mode === "dark" ? (
+            <button onClick={lightMode}>
+              <Image
+                src={assets.sun_icon}
+                alt=""
+                className="w-6 cursor-pointer"
+              />
+            </button>
+          ) : (
+            <button onClick={darkMode}>
+              <Image
+                src={assets.moon_icon}
+                alt=""
+                className="w-6 cursor-pointer"
+              />
+            </button>
+          )}
           <Link
             href="/#contact"
             className="hidden lg:flex items-center gap-2 px-10 py-2 border border-gray-500 rounded-full ml-4"
           >
             Contact
-            <Image src={assets.arrow_icon} className="w-3" alt="arrow" />
+            <Image src={mode ==='dark' ?assets.arrow_icon_dark : assets.arrow_icon} className="w-3" alt="arrow" />
           </Link>
         </div>
 

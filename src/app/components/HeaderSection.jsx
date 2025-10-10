@@ -2,7 +2,7 @@
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-const HeaderSection = () => {
+const HeaderSection = ({ mode }) => {
   const [theme, setThem] = useState("");
   useEffect(() => {
     setThem(localStorage.getItem("theme"));
@@ -27,7 +27,13 @@ const HeaderSection = () => {
             alt=""
             className="w-28 md:w-32 rounded-full object-cover"
           />
-          <h3 className="text-lg md:text-2xl text-gray-700">Hi! I'm Ahmed Mohamed 👋🏻</h3>
+          <h3
+            className={`text-lg md:text-2xl ${
+              mode === "dark" ? "text-white" : "text-gray-700"
+            } `}
+          >
+            Hi! I'm Ahmed Mohamed 👋🏻
+          </h3>
         </div>
         {/* <button onClick={changeMode} className="bg-red-700 cursor-pointer">
           change mode
@@ -35,7 +41,11 @@ const HeaderSection = () => {
         <h2 className="text-xl md:text-5xl  text-center ">
           frontend web developer <br /> based in Cairo.
         </h2>
-        <p className="text-gray-600 max-w-[86%]  sm:max-w-[45%] text-center">
+        <p
+          className={` ${
+            mode === "dark" ? "text-white" : "text-gray-600"
+          } max-w-[86%]  sm:max-w-[45%] text-center`}
+        >
           I’m a frontend developer from Egypt, blending clean design with
           powerful code. With hands-on experience in React, Next.js, and
           Tailwind CSS, I craft responsive, anime-inspired interfaces that feel
