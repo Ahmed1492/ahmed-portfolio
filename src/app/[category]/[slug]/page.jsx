@@ -12,10 +12,10 @@ const SingleProject = ({ params }) => {
   const { category, slug } = unwrappedParams;
 
   const project = projectsData.find(
-    (pro) => pro.slug === slug && pro.category === category
+    (pro) => pro.slug === slug 
   );
 
-  const { mode , setMode } = useAppContext();
+  const { mode, setMode } = useAppContext();
 
   if (!project)
     return <div className="p-10 text-center">Project not found.</div>;
@@ -69,17 +69,55 @@ const SingleProject = ({ params }) => {
                 className="flex items-center gap-2 cursor-pointer font-semibold text-base md:text-lg p-2 rounded-md transition-all duration-300 hover:text-[#1e5585]"
               >
                 GitHub Repo
-                <Image src={mode ==='dark' ?assets.arrow_icon_dark : assets.arrow_icon} className="w-3" alt="arrow" />
+                <Image
+                  src={
+                    mode === "dark" ? assets.arrow_icon_dark : assets.arrow_icon
+                  }
+                  className="w-3"
+                  alt="arrow"
+                />
               </Link>
 
-              <Link
-                target="_blank"
-                href={project?.liveDemo || project?.recordDemo || ""}
-                className="flex items-center gap-2 cursor-pointer font-semibold text-base md:text-lg p-2 rounded-md transition-all duration-300 hover:text-[#1e5585]"
-              >
-                Live Demo
-                <Image src={mode ==='dark' ?assets.arrow_icon_dark : assets.arrow_icon} className="w-3" alt="arrow" />
-              </Link>
+              {project.recordDemo && (
+                <Link
+                  target="_blank"
+                  href={project?.recordDemo || ""}
+                  className="flex items-center gap-2 cursor-pointer font-semibold text-base md:text-lg p-2 rounded-md transition-all duration-300 hover:text-[#1e5585]"
+                >
+                  Recorded Demo
+                  <Image
+                    src={
+                      mode === "dark"
+                        ? assets.arrow_icon_dark
+                        : assets.arrow_icon
+                    }
+                    className="w-3"
+                    alt="arrow"
+                  />
+                </Link>
+              )}
+              {project.liveDemo && (
+                <Link
+                  target="_blank"
+                  href={project?.liveDemo || ""}
+                  className={`flex items-center gap-2 cursor-pointer font-semibold  md:text-lg p-2 rounded-md transition-all duration-300  ${
+                    project?.liveDemo
+                      ? "text-base hover:text-[rgb(30,85,133)]"
+                      : "text-slate-400"
+                  } `}
+                >
+                  Live Demo
+                  <Image
+                    src={
+                      mode === "dark"
+                        ? assets.arrow_icon_dark
+                        : assets.arrow_icon
+                    }
+                    className={`w-3 ${project?.liveDemo ? "" : "invert"}`}
+                    alt="arrow"
+                  />
+                </Link>
+              )}
             </div>
           </div>
 

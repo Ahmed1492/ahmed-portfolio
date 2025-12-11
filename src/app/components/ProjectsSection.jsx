@@ -13,7 +13,7 @@ const ProjectsSection = ({ mode }) => {
   const categories = [
     { category: "all", label: "All" },
     { category: "react", label: "React.js" },
-    { category: "nextjs", label: "Next.js" },
+    { category: "next", label: "Next.js" },
     { category: "node", label: "Node.js" },
     { category: "ui", label: "UI / Front-end Design" },
   ];

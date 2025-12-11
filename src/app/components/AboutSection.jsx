@@ -34,7 +34,11 @@ const AboutSection = ({ mode }) => {
     ${mode === "dark" ? "hover:bg-gray-700" : "hover:bg-gray-100"}
   `}
               >
-                <Image className="w-7 mt-3" src={icon} alt={title} />
+                <Image
+                  className={`w-7 mt-3 ${mode === "dark" ? "invert" : ""}`}
+                  src={icon}
+                  alt={title}
+                />
                 <h3
                   className={`my-4 font-semibold ${
                     mode == "dark" ? "text-white" : "text-gray-700"

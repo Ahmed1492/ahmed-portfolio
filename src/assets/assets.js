@@ -130,12 +130,101 @@ export const serviceData = [
 
 export const projectsData = [
     {
+        id: 123,
+        title: "Netflix Clone",
+        slug: "netflix-clone",
+        img: ["/netflix-clone/2.png", "/netflix-clone/1.png", "/netflix-clone/3.png", "/netflix-clone/4.png", "/netflix-clone/5.png", "/netflix-clone/6.png"],
+        techUsed: [
+            "React.js",
+            "Tailwind CSS",
+            "Firebase Authentication",
+            "Firebase Firestore",
+            "TMDB API",
+            "React Router",
+            "Vercel"
+        ],
+        category: "react",
+        description: "A full-stack Netflix-style app with Firebase authentication and TMDB-powered movie browsing, trailers, and detailed pages.",
+        features: [
+            "User registration and secure login via Firebase Authentication",
+            "Protected routes accessible after authentication",
+            "Browse trending and popular movies from TMDB",
+            "View individual movie details including trailer, release date, and description",
+            "Search functionality to explore movies dynamically",
+            "Real-time data fetching with optimized API requests",
+            "Responsive Netflix-style UI built with Tailwind CSS",
+            "Smooth navigation using React Router"
+        ],
+        githupRepo: null,
+        liveDemo: "https://netflix-clone-lilac-pi-47.vercel.app/",
+        recordDemo: null
+    },
+    {
+        id: 122,
+        title: "Blog Nest – Full-Stack Blog Publishing Platform",
+        slug: "blog-nest",
+        img: ["/blog-nest/1.png", "/blog-nest/2.png", "/blog-nest/3.png", "/blog-nest/4.png", "/blog-nest/5.png", "/blog-nest/6.png", "/blog-nest/7.png", "/blog-nest/8.png", "/blog-nest/9.png", "/blog-nest/10.png", "/blog-nest/11.png", "/blog-nest/12.png", "/blog-nest/13.png", "/blog-nest/14.png", "/blog-nest/15.png", "/blog-nest/16.png", "/blog-nest/17.png",],
+        techUsed: [
+            "React.js",
+            "Tailwind CSS",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Mongoose",
+            "JWT",
+            "Multer",
+            "ImageKit",
+            "Google Gemini AI"
+        ],
+        category: "node&react",
+        description: "Blog Nest is a modern full-stack blogging platform where admins can publish rich, long-form articles with AI-powered generation, while users enjoy a fast, responsive interface with clean Markdown-based rendering.",
+        features: [
+            "Browse all published blogs with responsive UI and smooth navigation",
+            "View detailed blog pages with titles, dates, images, and rich formatted content",
+            "Markdown-based rendering for clean and structured reading experience",
+            "Secure admin authentication with JWT-protected routes",
+            "Admin dashboard for creating, editing, and deleting blogs",
+            "Rich text editor powered by Quill for blog publishing",
+            "AI-powered blog auto-generation using Google Gemini",
+            "SEO-friendly blog URLs generated via slugs",
+            "Image uploads handled with Multer and optional ImageKit optimization",
+            "Scalable content storage with MongoDB and Mongoose ORM",
+            "Responsive UI styled with Tailwind CSS and enhanced with Motion animations",
+        ],
+        githupRepo: "https://github.com/Ahmed1492/blog-nest",
+        liveDemo: null,
+        recordDemo: "https://www.linkedin.com/posts/activity-blog-nest-demo"
+    },
+    {
+        id: 121,
+        title: "Full-Stack Food Ordering App",
+        slug: "food-ordering-app",
+        img: ["/food-flow/1.png", "/food-flow/2.png", "/food-flow/6.png", "/food-flow/7.png", "/food-flow/8.png", "/food-flow/9.png", "/food-flow/11.png", "/food-flow/12.png", "/food-flow/13.png",],
+        techUsed: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "JWT", "Stripe API", "Multer"],
+        category: "node&react",
+        description: "A modern full-stack food ordering platform enabling customers to browse menus, manage carts, and securely pay, while administrators handle inventory and order tracking.",
+        features: [
+            "User account registration, login, and secure authentication with JWT",
+            "Profile management with image upload, update, and removal",
+            "Role-based access control ensuring secure user and admin routes",
+            "Cart functionality to add, remove, and view items",
+            "Stripe-powered secure checkout with test card support",
+            "Automatic order creation and verification upon successful payment",
+            "Admin food management: add, update, remove items with image uploads via Multer",
+            "Order management: users view history, admins update statuses and monitor all orders",
+            "Responsive UI styled with Tailwind CSS and managed with React Context API",
+        ],
+        githupRepo: "https://github.com/Ahmed1492/food-flow",
+        liveDemo: null,
+        recordDemo: "https://www.linkedin.com/posts/activity-7386867957064155136-ktGH?utm_source=share&utm_medium=member_android&rcm=ACoAAD-hKsAB1QXZ1eSyBx8nGWP48RuYiBX5Bdg"
+    },
+    {
         id: 1,
         title: "Social Media App",
         slug: "social-media-app",
-        img: ["/workn.png", '/work-1.png'],
+        img: ["/social-media/1.png", "/social-media/2.png", "/social-media/3.png", "/social-media/13.png", "/social-media/5.png", "/social-media/6.png", "/social-media/7.png", "/social-media/8.png", "/social-media/10.png"],
         techUsed: ["Next.js", "Prisma", "MySQL", "Clerk.js", "Tailwind CSS", "Zod", "Svix"],
-        category: "fullstack",
+        category: "next",
         description: "A full-stack social media platform with dynamic user interactions, scalable architecture, and modern UX.",
         features: [
             "Secure user authentication and profile management using Clerk.js",
@@ -169,7 +258,7 @@ export const projectsData = [
 
         ],
         techUsed: ["Next.js", "Tailwind CSS", "Zustand", "Wix SDK", "Node.js", "MySQL"],
-        category: "fullstack",
+        category: "next",
         description: "A full-featured e-commerce platform with dynamic product listings, secure checkout, and responsive design.",
         features: [
             "Secure login/register system with user profile updates using Wix Members API",
@@ -192,8 +281,8 @@ export const projectsData = [
         id: 3,
         title: "Task Manager App",
         slug: "task-manager-app",
-        img: ["/workn.png", '/work-1.png'], techUsed: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS"],
-        category: "node",
+        img: ["/task-manger/1.png", "/task-manger/2.png", "/task-manger/3.png", "/task-manger/4.png", "/task-manger/5.png", "/task-manger/6.png", "/task-manger/7.png", "/task-manger/8.png", "/task-manger/9.png", "/task-manger/10.png",], techUsed: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS"],
+        category: "node&react",
         description: "A full-stack task management application to help users organize and track tasks efficiently with secure authentication and CRUD functionality.",
         features: [
             "Secure user authentication using JWT with token storage in localStorage",
@@ -213,18 +302,19 @@ export const projectsData = [
     ,
     {
         id: 6,
-        title: "ECommerce App",
-        slug: "ecommerce-app",
-        img: ["/workn.png", '/work-1.png'], techUsed: ["React.js", "Sass (SCSS)", "React Router", "Redux Toolkit"],
-        category: "nextjs",
+        title: "QuickCart Store",
+        slug: "quick-cart-store",
+        img: ["/quick-cart-store/1.png", "/quick-cart-store/2.png", "/quick-cart-store/3.png", "/quick-cart-store/4.png", "/quick-cart-store/5.png", "/quick-cart-store/6.png", "/quick-cart-store/7.png", "/quick-cart-store/8.png",], techUsed: ["React.js", "Sass (SCSS)", "React Router", "Redux Toolkit"],
+        category: "react",
         description: "A simple eCommerce application with product listings, category filtering, single product pages, and responsive design.",
         features: [
-            "Product listing with all available items",
-            "Category filter for Men's, Women's, and Beauty products",
-            "Single product page with detailed view",
-            "Responsive design using Sass (SCSS) for styling",
-            "Navigation between pages powered by React Router",
-            "State management with Redux Toolkit"
+            "Dynamic product catalog with detailed single product pages",
+            "Category-based filtering for Men's, Women's, and Beauty collections",
+            "Global state management with Redux Toolkit for cart and product data",
+            "Smooth navigation and routing powered by React Router",
+            "Responsive, modern UI styled with Sass (SCSS)",
+            "Optimized component structure for scalability and maintainability"
+
         ],
         githupRepo: "https://github.com/Ahmed1492/E-commerce-React-App", // add your repo link
         liveDemo: "https://ahmed1492.github.io/E-commerce-React-App/",
@@ -235,7 +325,7 @@ export const projectsData = [
         id: 7,
         title: "Product Listing and Search Application",
         slug: "product-listing-app",
-        img: ["/workn.png", '/work-1.png'], techUsed: ["React.js", "Tailwind CSS", "localStorage"],
+        img: ["/simple-product-list/1.png", "/simple-product-list/2.png", "/simple-product-list/3.png", "/simple-product-list/4.png", "/simple-product-list/5.png", "/simple-product-list/6.png", "/simple-product-list/7.png",], techUsed: ["React.js", "Tailwind CSS", "localStorage"],
         category: "react",
         description: "A product management application with search, filtering, sorting, pagination, and add product functionality, styled with Tailwind CSS.",
         features: [

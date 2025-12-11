@@ -16,12 +16,12 @@ const ProjectGallery = ({ images }) => {
   return (
     <div className="w-full">
       {/* MAIN IMAGE */}
-      <div className="rounded-sm shadow-lg w-full relative aspect-video">
+      <div className="rounded-xl shadow-lg w-full relative aspect-video">
         <Image
           src={images[currentIndex]}
           alt="main"
           fill
-          className="object-cover rounded-sm shadow-lg"
+          className=" rounded-xl shadow-lg"
         />
       </div>
 
@@ -35,7 +35,7 @@ const ProjectGallery = ({ images }) => {
             width={80}
             height={60}
             onClick={() => setCurrentIndex(index)}
-            className={`object-cover rounded-md shadow-md cursor-pointer 
+            className={`object-covera rounded-sm shadow-md cursor-pointer 
         w-20 h-16 sm:w-24 sm:h-18 md:w-28 md:h-20
         ${index === currentIndex ? "ring-2 ring-blue-500" : ""}`}
           />
@@ -46,7 +46,7 @@ const ProjectGallery = ({ images }) => {
       <div className="flex items-center justify-center mt-[2rem] gap-3">
         <div
           onClick={handlePrev}
-          className="bg-slate-700 text-white cursor-pointer w-14 h-14 flex items-center justify-center p-5 rounded-full"
+          className={`bg-slate-700 text-white cursor-pointer w-14 h-14 flex items-center justify-center p-5 rounded-full`}
         >
           Prev
         </div>

@@ -9,7 +9,7 @@ const ProjectCategory = ({ filter, currentPage, setCurrentPage, mode }) => {
   const filteredProjects =
     filter === "all"
       ? projects
-      : projects.filter((project) => project.category === filter);
+      : projects.filter((project) => project.category.includes(filter));
 
   //  Pagination state
   const projectsPerPage = 3;
@@ -34,21 +34,21 @@ const ProjectCategory = ({ filter, currentPage, setCurrentPage, mode }) => {
               key={index}
               className={`flex flex-col ${
                 mode == "dark" ? "bg-whitea" : "bg-white"
-              }  m-auto w-[23rem] md:w-[48%] lg:w-[45%] xl:w-[30%]  gap-0`}
+              }  m-auto w-[23rem] md:w-[48%] lg:w-[45%] xl:w-[30%]  gap-0 hover:-translate-y-4 duration-500`}
             >
               {/* Project image */}
-              <div className="relative w-full aspect-video rounded-t-lg overflow-hidden bg-gray-200">
+              <div className="relative w-full aspect-video rounded-t-lg overflow-hidden bg-gray-200 ">
                 <Image
                   src={project.img[0]}
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  className=""
                 />
               </div>
 
               {/* Project details */}
               <div
-                className={`flex flex-col w-full rounded-b-lg px-4 py-7 ${
+                className={`flex flex-col w-full rounded-b-lg px-4 py-7 min-h-[12rem] ${
                   mode == "dark" ? "bg-gray-700" : "bg-white"
                 } shadow-2xl justify-center items-center gap-3`}
               >
@@ -87,6 +87,8 @@ const ProjectCategory = ({ filter, currentPage, setCurrentPage, mode }) => {
           ? "bg-gray-800 text-gray-300 hover:bg-gray-700"
           : "bg-gray-200 hover:bg-gray-300"
       }
+            ${currentPage === 0 ? "" : "cursor-pointer"}
+
     `}
         >
           Prev
@@ -97,7 +99,7 @@ const ProjectCategory = ({ filter, currentPage, setCurrentPage, mode }) => {
           <button
             key={i}
             onClick={() => setCurrentPage(i + 1)}
-            className={`px-4 py-1 rounded font-medium transition-all duration-300
+            className={`px-4 py-1 rounded font-medium transition-all duration-300 cursor-pointer
         ${
           currentPage === i + 1
             ? "bg-[#1e5585] text-white font-bold"
@@ -121,6 +123,7 @@ const ProjectCategory = ({ filter, currentPage, setCurrentPage, mode }) => {
           ? "bg-gray-800 text-gray-300 hover:bg-gray-700"
           : "bg-gray-200 hover:bg-gray-300"
       }
+      ${currentPage === totalPages ? "" : "cursor-pointer"}
     `}
         >
           Next

@@ -66,7 +66,11 @@ const HeaderSection = ({ mode }) => {
             className="flex items-center gap-2 md:px-5 px-3 py-2 text-sm md:text-base  cursor-pointer   rounded-full border border-slate-400"
           >
             My Reusme
-            <Image src={assets.download_icon} alt="" className="w-4" />
+            <Image
+              src={assets.download_icon}
+              alt=""
+              className={`w-4 ${mode == "dark" ? "invert" : ""}`}
+            />
           </a>
         </div>
       </div>
