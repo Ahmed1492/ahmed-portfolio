@@ -2,7 +2,7 @@
 A modern developer portfolio built with **Next.js** and **Tailwind CSS**, showcasing my projects, skills, and experience with a unique anime-inspired branding and clean UI.  
 
 ## 🚀 Demo  
-[ahmed-portfolio-rho-vert.vercel.app](https://ahmed-portfolio-rho-vert.vercel.app)  
+[ahmed-portfolio-rho-vert.vercel.app](ahmed-portfolio-zpiu.vercel.app/)  
 
 ## 📦 Features  
 - 📂 **Projects Showcase** – Dynamic gallery with categories and details  
