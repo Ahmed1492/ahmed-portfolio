@@ -400,9 +400,11 @@ export const projectsData = [
 
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js' },
-    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'HTI  in Computer Science' },
-    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
+    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: ' HTML, CSS, JavaScript, React.js, Next.js, Node.js, MongoDB' },
+    {
+        icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: `Bachelor in Computer Science at—
+Higher Technological Institute (HTI), Egypt` },
+    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Completed multiple web projects demonstrating modern, responsive, and scalable solutions.' }
 ];
 
 export const toolsData = [

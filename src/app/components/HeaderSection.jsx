@@ -39,7 +39,7 @@ const HeaderSection = ({ mode }) => {
           change mode
         </button> */}
         <h2 className="text-xl md:text-5xl  text-center ">
-          full stack web developer <br /> based in Cairo.
+          Full Stack Web Developer <br /> Based in Cairo.
         </h2>
         <p
           className={` ${
@@ -66,7 +66,7 @@ const HeaderSection = ({ mode }) => {
             href="/resume.pdf"
             className="flex items-center gap-2 md:px-5 px-3 py-2 text-sm md:text-base  cursor-pointer   rounded-full border border-slate-400"
           >
-            My Reusme
+            My Resume
             <Image
               src={assets.download_icon}
               alt=""
