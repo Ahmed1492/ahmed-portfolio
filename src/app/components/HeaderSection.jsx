@@ -23,7 +23,7 @@ const HeaderSection = ({ mode }) => {
       <div className="h-full  w-full flex flex-col gap-5 items-center justify-center">
         <div className="flex  md:mt-0 flex-col gap-1 items-center ">
           <Image
-            src={assets.profile_img}
+            src={assets.user_image4}
             alt=""
             className="w-28 md:w-32 rounded-full object-cover"
           />
@@ -39,17 +39,18 @@ const HeaderSection = ({ mode }) => {
           change mode
         </button> */}
         <h2 className="text-xl md:text-5xl  text-center ">
-          frontend web developer <br /> based in Cairo.
+          full stack web developer <br /> based in Cairo.
         </h2>
         <p
           className={` ${
             mode === "dark" ? "text-white" : "text-gray-600"
           } max-w-[86%]  sm:max-w-[45%] text-center`}
         >
-          I’m a frontend developer from Egypt, blending clean design with
-          powerful code. With hands-on experience in React, Next.js, and
-          Tailwind CSS, I craft responsive, anime-inspired interfaces that feel
-          as good as they look.
+          I’m a full-stack developer from Egypt who blends clean design with
+          powerful, reliable code. I work with React, Next.js, Node.js, and
+          MongoDB to build fast, responsive web applications. I enjoy creating
+          anime-inspired interfaces backed by solid backend logic—projects that
+          look great, perform well, and solve real problems.
         </p>
 
         <div className="flex items-center mt-5 gap-6">

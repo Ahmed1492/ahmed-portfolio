@@ -8,10 +8,10 @@ const AboutSection = ({ mode }) => {
       <h4 className="text-lg text-center mb-2 font-ovo">Introduction</h4>
       <h2 className="text-5xl text-center mb-2 font-ovo ">About Me</h2>
 
-      <div className="w-full flex flex-col lg:flex-row items-center gap-20 my-20 ">
+      <div className="w-full flex flex-col lg:flex-row  gap-20 my-20 items-start ">
         <div className="w-64 sm:w-80 rounded-3xl max-w-none">
           <Image
-            src={assets.user_image}
+            src={assets.user_image2}
             alt="user"
             className="w-full rounded-md object-cover"
           />
@@ -19,10 +19,12 @@ const AboutSection = ({ mode }) => {
 
         <div className="flex-1">
           <p className="mb-10 max-w-2xl font-ovo">
-            I am an experienced Frontend Developer with over a decade of
-            professional expertise in the field. Throughout my career, I have
-            had the privilege of collaborating with prestigious organizations,
-            contributing to their success and growth.
+            I specialize in React, Next.js, Node.js, and MongoDB, creating clean
+            user interfaces backed by reliable backend systems. I enjoy turning
+            ideas into real products, focusing on performance, usability, and
+            maintainable code. I’m always learning and improving, aiming to
+            build applications that solve real problems and deliver great user
+            experiences.
           </p>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 max-w-2xl">
             {infoList.map(({ icon, iconDark, title, description }, index) => (

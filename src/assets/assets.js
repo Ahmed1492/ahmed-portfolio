@@ -1,3 +1,7 @@
+import user_image1 from './personal-image/2.jpg';
+import user_image2 from './personal-image/2.jpg';
+import user_image3 from './personal-image/2.jpg';
+import user_image4 from './personal-image/4.jpg';
 import user_image from './u.jpg';
 import code_icon from './code-icon.png';
 import code_icon_dark from './code-icon-dark.png';
@@ -38,6 +42,10 @@ import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 
 export const assets = {
     user_image,
+    user_image1,
+    user_image2,
+    user_image3,
+    user_image4,
     code_icon,
     code_icon_dark,
     edu_icon,
@@ -127,6 +135,12 @@ export const serviceData = [
 ];
 
 
+export const profileImage = [
+    '/public/personal-image/1.jpg ',
+    '/public/personal-image/2.jpg ',
+    '/public/personal-image/3.jpg ',
+    '/public/personal-image/4.jpg ',
+];
 
 export const projectsData = [
     {

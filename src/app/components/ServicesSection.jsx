@@ -9,12 +9,13 @@ const ServicesSection = ({ mode }) => {
       <h2 className="text-5xl text-center mb-2 font-ovo ">My Services</h2>
 
       <p className="text-center max-w-2xl mx-auto mb-12 font-ovo ">
-        "I’m Ahmed — a frontend-first full-stack developer crafting sleek,
-        responsive web experiences with React, Next.js, and Tailwind CSS.
-        Inspired by the innovation of companies like Microsoft, Tesla, and
-        Apple, I’m building my own brand from the ground up. My work blends
-        technical precision with creative flair, and I’m always pushing for
-        designs that feel alive a
+        I’m Ahmed, a full-stack developer specializing in building modern,
+        scalable web applications from front end to back end. I work with React,
+        Next.js, Node.js, and MongoDB to deliver responsive interfaces, secure
+        APIs, and efficient backend systems. Inspired by companies like
+        Microsoft, Tesla, and Apple, I focus on combining clean architecture
+        with thoughtful design to create reliable, high-performance digital
+        products.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 my-10">
@@ -29,7 +30,11 @@ const ServicesSection = ({ mode }) => {
           >
             <Image src={icon} alt={title} className="w-10 rounded-full" />
             <h3 className="text-lg my-4 font-semibold">{title}</h3>
-            <p className={`text-sm leading-5 ${mode =='dark' ? 'text-white' : 'text-gray-600'}  `}>
+            <p
+              className={`text-sm leading-5 ${
+                mode == "dark" ? "text-white" : "text-gray-600"
+              }  `}
+            >
               {description}
             </p>
             <a
@@ -37,7 +42,15 @@ const ServicesSection = ({ mode }) => {
               className="flex items-center gap-2 text-sm mt-5 text-blue-600 hover:underline"
             >
               Read more
-              <Image src={mode ==='dark' ?assets.right_arrow_bold_dark : assets.right_arrow} alt="" className="w-4 mt-1" />
+              <Image
+                src={
+                  mode === "dark"
+                    ? assets.right_arrow_bold_dark
+                    : assets.right_arrow
+                }
+                alt=""
+                className="w-4 mt-1"
+              />
             </a>
           </div>
         ))}
